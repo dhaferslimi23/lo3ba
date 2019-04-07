@@ -1,5 +1,4 @@
-int ReponseEnigme(int x){
-SDL_Event test;
+int ReponseEnigme(SDL_Event test , int x){
 int done =1;
 		while(done){
 		SDL_WaiteEvent(&event);
