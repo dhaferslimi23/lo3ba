@@ -18,9 +18,9 @@ int done =1;
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_1 : 
-			Win();
+			Win(*screen , *image ,positionecran);
 			else {
-				Lose();
+				Lose(*screen , *image ,positionecran);
 			     }
 		break;
 		}
@@ -28,9 +28,9 @@ int done =1;
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_3 : 
-			Win();
+			Win(*screen , *image ,positionecran);
 			else {
-				Lose();
+				Lose(*screen , *image ,positionecran);
 			     }
 		break;
 		}
@@ -38,9 +38,9 @@ int done =1;
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_4 : 
-			Win();
-			else { 
-				Lose();
+			Win(*screen , *image ,positionecran);
+			else {
+				Lose(*screen , *image ,positionecran);
 			     }
 		break;
 }
