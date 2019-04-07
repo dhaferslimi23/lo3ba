@@ -1,0 +1,28 @@
+void affichEnigme(int x){
+SDL_Surface *screen;
+SDL_Surface *image;
+SDL_Rect positionecran;
+x=rand()%3 ;
+positionecran.x=0;
+positionecran.y=0;
+switch (x) {
+	case 0 :
+		image =SDL_LoadBMP("0.bmp");
+		SDL_BlitSurface(image,NULL,screen,&positionecran);
+		SDL_Flip(screen);
+	break;
+	
+	case 1 : 
+		image=SDL_LoadBMP("1.bmp");
+		SDL_BlitSurface(image,NULL,screen,&positionecran);
+		SDL_Flip(screen);
+	break;
+	
+	case 2 :
+		image=SDL_LoadBMP("2.bmp");
+		SDL_BlitSurface(image,NULL,screen,&positionecran);
+		SDL_Flip(screen);
+	break;
+}
+SDL_FreeSurface(image);
+}
