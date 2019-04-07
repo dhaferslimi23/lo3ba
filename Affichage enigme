@@ -1,10 +1,4 @@
-void affichEnigme(int x){
-SDL_Surface *screen;
-SDL_Surface *image;
-SDL_Rect positionecran;
-x=rand()%3 ;
-positionecran.x=0;
-positionecran.y=0;
+void affichEnigme(int x , SDL_Surface*screen , *image , SDL_Rect positionecran){
 switch (x) {
 	case 0 :
 		image =SDL_LoadBMP("0.bmp");
