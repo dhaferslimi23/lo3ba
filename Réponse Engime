@@ -43,4 +43,5 @@ int done =1;
 				Lose(*screen , *image ,positionecran);
 			     }
 		break;
+		return 1;
 }
