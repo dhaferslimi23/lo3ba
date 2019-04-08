@@ -17,7 +17,7 @@ printf("Unable to initialize SDL: %s\n",SDL_GetError());
 return 1;
 }
 
-screen= SDL_SetVideoMode(1600,400,0,SDL_HWSURFACE | SDL_DOUBLEBUF);
+screen= SDL_SetVideoMode(950,600,0,SDL_HWSURFACE | SDL_DOUBLEBUF);
 if(screen==NULL)
 {
 printf("Unable to set video mode: %s\n",SDL_GetError());
@@ -25,12 +25,19 @@ return 1;
 }
 x=rand()%3;
 affichEnigme(x,screen,image,positionecran);
+
 ReponseEnigme(test,x);
+SDL_FreeSurface(image);
 if (ReponseEnigme)
-  {// Win(screen,image, positionecran);
+  {	
+	image=SDL_LoadBMP("Winner.bmp");
+	SDL_BlitSurface(image,NULL,screen,&positionecran);
+	SDL_Flip(screen);
   }
   else {
-    //Lose(screen,image,positionecran);
+    image=SDL_LoadBMP("Loser.bmp");
+    SDL_BlitSurface(image,NULL,screen,&positionecran);
+    SDL_Flip(screen);
 }
 return 0;
 }

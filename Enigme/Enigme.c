@@ -2,18 +2,6 @@
 #include"SDL/SDL.h"
 #include"SDL/SDL_image.h"
 #include "Enigme.h"
-int Win(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
-	image=SDL_LoadBMP("Winner.bmp");
-	SDL_BlitSurface(image,NULL,screen,&positionecran);
-	SDL_Flip(screen);
-	/eturn 1;
-}
-int Lose(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
- image=SDL_LoadBMP("Loser.bmp");
- SDL_BlitSurface(image,NULL,screen,&positionecran);
- SDL_Flip(screen);
- return 1;
-}
 int  affichEnigme(int x , SDL_Surface*screen , SDL_Surface*image , SDL_Rect positionecran){
 switch (x) {
 	case 0 :
@@ -34,8 +22,7 @@ switch (x) {
 		SDL_Flip(screen);
 	break;
 }
-SDL_FreeSurface(image);
-return x;
+return 1;
 }
 
 int ReponseEnigme(SDL_Event test , int x){
@@ -56,7 +43,7 @@ int done =1;
 		if (x==0){ 
 		switch(test.key.keysym.sym)
 		{
-		case SDLK_1 : 
+		case SDLK_3 : 
 			return 1 ;
 		break;
 		}
@@ -72,7 +59,7 @@ int done =1;
 		if (x==2) {
 		switch(test.key.keysym.sym)
 		{
-		case SDLK_4 : 
+		case SDLK_3 : 
 			return 1;
 		break; 
 		}
