@@ -1,0 +1,5 @@
+void init_obj(sec se,objet *ob)
+{
+    ob->objet=IMG_Load("objet.png");       
+    SDL_BlitSurface(ob->objet, NULL, se.screen,&ob->position_objet);    
+}

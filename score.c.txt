@@ -1,0 +1,13 @@
+void initialiser_score(sco *s,sec se)
+{
+TTF_Init();
+s->font=TTF_OpenFont("BebasNeue-Book.ttf", 50);
+SDL_Color color={255,0,0};
+char ch[10];
+s->sscore;
+sprintf(ch,"%d XP",s->sscore);
+s->score=TTF_RenderText_Solid(s->font,ch,color);
+SDL_BlitSurface(s->score,NULL,se.screen,&s->position_score);
+SDL_Flip(se.screen);
+TTF_Quit();
+}

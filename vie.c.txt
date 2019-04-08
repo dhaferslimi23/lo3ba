@@ -1,0 +1,14 @@
+int vie(int state , int v)
+{
+    if (state==1)
+          {
+         if(v<3)
+                v++;
+          }
+      else
+          if(state==-1)
+              v--;
+                 else
+                    return v;
+ return v;
+}
