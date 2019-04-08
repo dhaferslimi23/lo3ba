@@ -12,4 +12,12 @@ positionecran.x=0;
 positionecran.y=0;
 x=rand()%3;
 return 0;
+affichEnigme(x,*screen,*image,positionecran);
+reponseEnigme(test,x);
+if (reponseEnigme)
+  { Win(*screen , *image, positionecran);
+  }
+  else {
+    Lose( *screen ,  *image,  positionecran);
+}
 }
