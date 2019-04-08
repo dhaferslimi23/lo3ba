@@ -1,10 +1,12 @@
-void Win(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
+int Win(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
 	image=SDL_LoadBMP("Winner.bmp");
 	SDL_BlitSurface(image,NULL,screen,&positionecran);
 	SDL_Flip(screen);
+	return 1
 }
-void Lose(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
+int Lose(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
  image=SDL_LoadBMP("Loser.bmp");
  SDL_BlitSurface(image,NULL,screen,&positionecran);
  SDL_Flip(screen);
+ return1
 }	
