@@ -18,30 +18,23 @@ int done =1;
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_1 : 
-			Win(*screen , *image ,positionecran);
-			else {
-				Lose(*screen , *image ,positionecran);
-			     }
+			return 1 ;
+			else { return 0;}
 		break;
 		}
 		if (x==1){ 
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_3 : 
-			Win(*screen , *image ,positionecran);
-			else {
-				Lose(*screen , *image ,positionecran);
-			     }
+			return 1;
+			else { return 0};
 		break;
 		}
 		if (x==2) {
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_4 : 
-			Win(*screen , *image ,positionecran);
-			else {
-				Lose(*screen , *image ,positionecran);
-			     }
+			return 1;
+			else { return 0; }
 		break;
-		return 1;
 }
