@@ -1,4 +1,20 @@
-int affichEnigme(int x , SDL_Surface*screen , *image , SDL_Rect positionecran){
+#include<stdio.h>
+#include"SDL/SDL.h"
+#include"SDL/SDL_image.h"
+#include "Enigme.h"
+int Win(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
+	image=SDL_LoadBMP("Winner.bmp");
+	SDL_BlitSurface(image,NULL,screen,&positionecran);
+	SDL_Flip(screen);
+	return 1;
+}
+int Lose(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
+ image=SDL_LoadBMP("Loser.bmp");
+ SDL_BlitSurface(image,NULL,screen,&positionecran);
+ SDL_Flip(screen);
+ return 1;
+}
+int  affichEnigme(int x , SDL_Surface*screen , *image , SDL_Rect positionecran){
 switch (x) {
 	case 0 :
 		image =SDL_LoadBMP("0.bmp");
@@ -19,21 +35,9 @@ switch (x) {
 	break;
 }
 SDL_FreeSurface(image);
-return 1;
+return x;
 }
 
-int Win(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
-	image=SDL_LoadBMP("Winner.bmp");
-	SDL_BlitSurface(image,NULL,screen,&positionecran);
-	SDL_Flip(screen);
-return 1;
-}
-int Lose(SDL_Surface *screen , SDL_Surface *image, SDL_Rect positionecran){
- image=SDL_LoadBMP("Loser.bmp");
- SDL_BlitSurface(image,NULL,screen,&positionecran);
- SDL_Flip(screen);
-return 1;
-}
 int ReponseEnigme(SDL_Event test , int x){
 int done =1;
 		while(done){
@@ -54,30 +58,23 @@ int done =1;
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_1 : 
-			Win(*screen , *image ,positionecran);
-			else {
-				Lose(*screen , *image ,positionecran);
-			     }
+			return 1 ;
+			else { return 0;}
 		break;
 		}
 		if (x==1){ 
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_3 : 
-			Win(*screen , *image ,positionecran);
-			else {
-				Lose(*screen , *image ,positionecran);
-			     }
+			return 1;
+			else { return 0};
 		break;
 		}
 		if (x==2) {
 		switch(event.key.keysym.sym)
 		{
 		case SDLK_4 : 
-			Win(*screen , *image ,positionecran);
-			else {
-				Lose(*screen , *image ,positionecran);
-			     }
+			return 1;
+			else { return 0; }
 		break;
-return1;
-}	
+}
