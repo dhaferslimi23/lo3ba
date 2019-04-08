@@ -1,0 +1,16 @@
+void DepAlea(SDL_Rect *positionsp,int intermin , int intermax)
+{
+    int x;
+    x=(rand()%2)+1;
+    switch(x)
+       {
+       case 1:
+        if(positionsp->x<intermax)
+            positionsp->x+=20;
+        break;
+       case 2:
+        if(positionsp->x>intermin)
+            positionsp->x-=20;
+        break;
+       }
+}
